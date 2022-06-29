@@ -20,20 +20,6 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
             }
             HStack {
-
-                Button(action: {
-                    if let img = UIImage(named: "Mona_Lisa") {
-                        inputImage = img
-                        hero = Image(uiImage: img)
-                    }
-                }) {
-                    Text("Demo")
-                        .padding(10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.blue, lineWidth: 2)
-                        )
-                }
  
                 Button(action: {
                     self.showingImagePicker = true
@@ -45,12 +31,12 @@ struct ContentView: View {
                                 .stroke(Color.blue, lineWidth: 2)
                         )
                 })
-                Menu("Filters") {
+                /*Menu("Filters") {
                     Button("Fork", action: filterFork)
                     Button("Gaussian Blur", action: filterGaussianBlur)
                     Button("Sepia", action: filterSepia)
                     Button("Twirl", action: filterTwirl)
-                }
+                }*/
                 .padding(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
@@ -71,7 +57,7 @@ struct ContentView: View {
                                 .stroke(Color.blue, lineWidth: 2)
                         )
                 })
-                Button(action: {
+                /*Button(action: {
                     guard let photo = inputImage else { return }
                     saveImageToFile(image: photo)
                 }, label: {
@@ -81,7 +67,7 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .stroke(Color.blue, lineWidth: 2)
                         )
-                })
+                })*/
             }
             
         }
