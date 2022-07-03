@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
     
@@ -26,9 +25,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.sourceType = .camera
         picker.delegate = self
         present(picker, animated: true)
-        
     }
-        
     @IBAction func didTapImportButton() {
         //importing photos
         let vc = UIImagePickerController()
@@ -42,31 +39,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.newImageStore = imageView.image
         performSegue(withIdentifier: "upload", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! uploadView
         vc.newImageUploadStore = self.newImageStore
     }
+}
 
-    
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
-            imageView.image = image
-        }
-        
         picker.dismiss(animated: true, completion: nil)
         
-        guard info[UIImagePickerController.InfoKey.originalImage] is
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
         UIImage else {
             return
         }
+        imageView.image = image
     }
-}
 
-//extension ViewController {
-//}
+}
 
