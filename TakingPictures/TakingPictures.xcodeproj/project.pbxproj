@@ -295,6 +295,7 @@
 				DEVELOPMENT_TEAM = KDWG89574C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakingPictures/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Overlayy;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow access to take a picture";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please Allow access to view pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -326,6 +327,7 @@
 				DEVELOPMENT_TEAM = 693TH9TMRT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakingPictures/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Overlayy;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow access to take a picture";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please Allow access to view pictures";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
