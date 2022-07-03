@@ -7,19 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
-
+    
+    
+    var newImageStore: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         imageView.backgroundColor = .secondarySystemBackground
-        
-        /*button.backgroundColor = .systemBlue
-        button.setTitle("Take Picture", for: .normal)
-        button.setTitleColor(.white, for: .normal)*/
     }
     
     @IBAction func didTapCameraButton() {
@@ -31,7 +29,7 @@ class ViewController: UIViewController {
         
     }
         
-        @IBAction func didTapImportButton() {
+    @IBAction func didTapImportButton() {
         //importing photos
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -39,10 +37,16 @@ class ViewController: UIViewController {
         vc.allowsEditing = true
         present(vc, animated: true)
     }
+    
+    @IBAction func didTapPostButton() {
+        self.newImageStore = imageView.image
+        performSegue(withIdentifier: "upload", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! uploadView
+        vc.newImageUploadStore = self.newImageStore
+    }
 
-}
-
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -56,11 +60,13 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         picker.dismiss(animated: true, completion: nil)
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
+        guard info[UIImagePickerController.InfoKey.originalImage] is
         UIImage else {
             return
         }
-        
     }
 }
+
+//extension ViewController {
+//}
 
