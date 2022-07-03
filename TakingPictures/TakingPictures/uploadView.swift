@@ -15,6 +15,6 @@ class uploadView: UIViewController {
     
         override func viewDidLoad() {
         super.viewDidLoad()
-            uploadImage.image = newImageUploadStore
+        uploadImage.image = newImageUploadStore
     }
 }
