@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5488DA762898B59300822580 /* liveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5488DA752898B59300822580 /* liveView.swift */; };
+		5488DA782898B59E00822580 /* liveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5488DA772898B59E00822580 /* liveView.storyboard */; };
 		9836D011287105D100F3A3AF /* uploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9836D010287105D100F3A3AF /* uploadView.swift */; };
 		B85FD56D286B98AD000CFA86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FD56C286B98AD000CFA86 /* AppDelegate.swift */; };
 		B85FD56F286B98AD000CFA86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85FD56E286B98AD000CFA86 /* SceneDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5488DA752898B59300822580 /* liveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = liveView.swift; sourceTree = "<group>"; };
+		5488DA772898B59E00822580 /* liveView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = liveView.storyboard; sourceTree = "<group>"; };
 		9836D010287105D100F3A3AF /* uploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadView.swift; sourceTree = "<group>"; };
 		B85FD569286B98AD000CFA86 /* TakingPictures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakingPictures.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85FD56C286B98AD000CFA86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5488DA742898B56A00822580 /* customCamera */ = {
+			isa = PBXGroup;
+			children = (
+				5488DA752898B59300822580 /* liveView.swift */,
+				5488DA772898B59E00822580 /* liveView.storyboard */,
+			);
+			path = customCamera;
+			sourceTree = "<group>";
+		};
 		B85FD560286B98AD000CFA86 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +71,15 @@
 		B85FD56B286B98AD000CFA86 /* TakingPictures */ = {
 			isa = PBXGroup;
 			children = (
+				5488DA742898B56A00822580 /* customCamera */,
 				B85FD56C286B98AD000CFA86 /* AppDelegate.swift */,
 				B85FD56E286B98AD000CFA86 /* SceneDelegate.swift */,
 				B85FD570286B98AD000CFA86 /* ViewController.swift */,
+				9836D010287105D100F3A3AF /* uploadView.swift */,
 				B85FD572286B98AD000CFA86 /* Main.storyboard */,
 				B85FD575286B98AF000CFA86 /* Assets.xcassets */,
 				B85FD577286B98AF000CFA86 /* LaunchScreen.storyboard */,
 				B85FD57A286B98AF000CFA86 /* Info.plist */,
-				9836D010287105D100F3A3AF /* uploadView.swift */,
 			);
 			path = TakingPictures;
 			sourceTree = "<group>";
@@ -129,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85FD579286B98AF000CFA86 /* LaunchScreen.storyboard in Resources */,
+				5488DA782898B59E00822580 /* liveView.storyboard in Resources */,
 				B85FD576286B98AF000CFA86 /* Assets.xcassets in Resources */,
 				B85FD574286B98AD000CFA86 /* Main.storyboard in Resources */,
 			);
@@ -142,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85FD571286B98AD000CFA86 /* ViewController.swift in Sources */,
+				5488DA762898B59300822580 /* liveView.swift in Sources */,
 				B85FD56D286B98AD000CFA86 /* AppDelegate.swift in Sources */,
 				B85FD56F286B98AD000CFA86 /* SceneDelegate.swift in Sources */,
 				9836D011287105D100F3A3AF /* uploadView.swift in Sources */,
@@ -292,7 +308,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KDWG89574C;
+				DEVELOPMENT_TEAM = 527QHH47VZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakingPictures/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overlayy;
@@ -308,7 +324,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ssing321.TakingPictures;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssing33.TakingPictures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -321,10 +337,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 693TH9TMRT;
+				DEVELOPMENT_TEAM = 527QHH47VZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakingPictures/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Overlayy;
@@ -340,8 +356,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.catherine.TakingPictures;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ssing33.TakingPictures;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

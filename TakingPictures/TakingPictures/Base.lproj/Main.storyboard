@@ -92,7 +92,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="📸"/>
                                 <connections>
-                                    <action selector="startCameraLiveOverlayWith_sender:" destination="wg0-oa-Zba" eventType="touchUpInside" id="God-fk-c6f"/>
+                                    <segue destination="Jn8-e4-gwZ" kind="show" identifier="toLiveView" id="nJ2-Lt-Owy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +107,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqZ-w4-iCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1618.840579710145" y="-273.21428571428572"/>
+        </scene>
+        <!--liveView-->
+        <scene sceneID="wga-Bj-60w">
+            <objects>
+                <viewControllerPlaceholder storyboardName="liveView" id="Jn8-e4-gwZ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ytO-7i-fyp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNp-jy-q1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1619" y="196"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cak-Yv-fUO">
