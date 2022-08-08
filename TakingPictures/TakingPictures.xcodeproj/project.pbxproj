@@ -47,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5416466C28A13F9B005BBC52 /* finaViewG */ = {
+			isa = PBXGroup;
+			children = (
+				5488DA79289B7CF400822580 /* finalView.storyboard */,
+				5488DA7B289B822700822580 /* finalView.swift */,
+			);
+			path = finaViewG;
+			sourceTree = "<group>";
+		};
 		5488DA742898B56A00822580 /* customCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +84,7 @@
 		B85FD56B286B98AD000CFA86 /* TakingPictures */ = {
 			isa = PBXGroup;
 			children = (
+				5416466C28A13F9B005BBC52 /* finaViewG */,
 				5488DA742898B56A00822580 /* customCamera */,
 				B85FD56C286B98AD000CFA86 /* AppDelegate.swift */,
 				B85FD56E286B98AD000CFA86 /* SceneDelegate.swift */,
@@ -84,8 +94,6 @@
 				B85FD575286B98AF000CFA86 /* Assets.xcassets */,
 				B85FD577286B98AF000CFA86 /* LaunchScreen.storyboard */,
 				B85FD57A286B98AF000CFA86 /* Info.plist */,
-				5488DA79289B7CF400822580 /* finalView.storyboard */,
-				5488DA7B289B822700822580 /* finalView.swift */,
 			);
 			path = TakingPictures;
 			sourceTree = "<group>";

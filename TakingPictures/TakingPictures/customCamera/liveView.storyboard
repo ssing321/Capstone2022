@@ -31,18 +31,23 @@
                                     <action selector="didTakePhotoWith_sender:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4ks-nl-5wY"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1h-pq-Ebt" userLabel="captured View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1h-pq-Ebt" userLabel="captured View">
                                 <rect key="frame" x="184" y="734" width="230" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VhO-0S-3mM" userLabel="preview View">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VhO-0S-3mM" userLabel="preview View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="695"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VhO-0S-3mM" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="topMargin" id="AsH-Wf-x51"/>
+                            <constraint firstItem="VhO-0S-3mM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="HtN-3Y-wDB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VhO-0S-3mM" secondAttribute="bottom" constant="123" id="JKL-z5-Ic7"/>
+                            <constraint firstItem="VhO-0S-3mM" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="b3u-Hd-daJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="captureImageView" destination="E1h-pq-Ebt" id="3Cy-e7-wZi"/>
