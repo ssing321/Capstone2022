@@ -12,37 +12,44 @@ class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
-    var newImageStore: UIImage!
+    @IBOutlet var Lbutton: UIButton!
+    @IBOutlet var Cbutton: UIButton!
+    @IBOutlet var Ibutton: UIButton!
+    
+    var firstImageStore: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Lbutton.layer.cornerRadius = 20.0
+        Cbutton.layer.cornerRadius = 20.0
+        Ibutton.layer.cornerRadius = 20.0
+        Lbutton.alpha = 0
     }
     
     @IBAction func didTapCameraButton() {
-        //camera
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
         present(picker, animated: true)
+        Lbutton.alpha = 1
     }
     @IBAction func didTapImportButton() {
-        //importing photos
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
+        Lbutton.alpha = 1
     }
     
     @IBAction func didTapPostButton() {
-        self.newImageStore = imageView.image
+        self.firstImageStore = imageView.image
         performSegue(withIdentifier: "upload", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! uploadView
-        vc.newImageUploadStore = self.newImageStore
+        vc.firstImageInSecondView = self.firstImageStore
     }
     
     func fixOrientation(img: UIImage) -> UIImage {
@@ -68,9 +75,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
-        UIImage else {
+                
+        UIImage
+            else {
             return
         }
+//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         imageView.image = image
         imageView.image = fixOrientation(img: imageView.image!)
     }
