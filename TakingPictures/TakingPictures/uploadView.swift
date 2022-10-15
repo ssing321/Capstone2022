@@ -39,10 +39,11 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         self.uploadImage.contentMode = .scaleAspectFit
         self.uploadImage.image = image
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
-        self.dismiss(animated: true)
-        let storyboard = UIStoryboard(name: "finalView", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "finalView")
-        self.show(controller, sender: self)
+        self.dismiss(animated: true) {
+            let storyboard = UIStoryboard(name: "finalView", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "finalView")
+            self.show(controller, sender: self)
+        }
     }
     
     override func viewDidLoad() {
