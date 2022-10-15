@@ -20,6 +20,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsj-bi-VcA">
                                 <rect key="frame" x="-12" y="76" width="426" height="512"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-03-6Fz">
                                 <rect key="frame" x="20" y="738" width="151" height="60"/>
@@ -56,13 +57,13 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.32156862745098036" green="0.12549019607843137" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="vCb-QN-P7i"/>
                     <connections>
                         <outlet property="button" destination="KdM-Lb-sxb" id="YdR-BO-3JM"/>
                         <outlet property="imageView" destination="hsj-bi-VcA" id="JNq-WP-eMt"/>
-                        <segue destination="wg0-oa-Zba" kind="show" identifier="upload" id="eBd-Is-Qks"/>
+                        <segue destination="wg0-oa-Zba" kind="show" identifier="upload" id="Lvi-9u-L1I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,7 +74,7 @@
                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
                 </button>
             </objects>
-            <point key="canvasLocation" x="1007" y="-273"/>
+            <point key="canvasLocation" x="1036" y="-283"/>
         </scene>
         <!--Upload View-->
         <scene sceneID="FLn-Ih-j9v">
@@ -104,30 +105,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-7a-cPm" customClass="ScaledHeightImageView" customModule="TakingPictures" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="414" height="569"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z3B-Ow-qA5"/>
-                        <color key="backgroundColor" red="0.32156862745098036" green="0.12549019607843137" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZpQ-WP-Tts"/>
                     <connections>
                         <outlet property="uploadImage" destination="CLd-7a-cPm" id="vxY-WT-rXR"/>
-                        <segue destination="gTt-CW-tnY" kind="show" identifier="goToFinalView" id="is9-dM-1gq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqZ-w4-iCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="-273"/>
-        </scene>
-        <!--finalView-->
-        <scene sceneID="uf7-kN-bkH">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="finalView" storyboardName="finalView" id="gTt-CW-tnY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="SyQ-zI-bFc"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pmj-2M-YcH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2764" y="-273"/>
+            <point key="canvasLocation" x="1994" y="-283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cak-Yv-fUO">
@@ -145,7 +136,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ShW-Cq-FId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="-273"/>
+            <point key="canvasLocation" x="97" y="-283"/>
         </scene>
     </scenes>
     <resources>

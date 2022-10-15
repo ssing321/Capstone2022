@@ -35,15 +35,14 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     }
     
     func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            self.uploadImage.contentMode = .scaleAspectFit
-            self.uploadImage.image = image
-            dismiss(animated: true)
-                {
-            self.performSegue(withIdentifier: "goToFinalView", sender: self)
-                }
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-        }
+        let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        self.uploadImage.contentMode = .scaleAspectFit
+        self.uploadImage.image = image
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        self.dismiss(animated: true)
+        let storyboard = UIStoryboard(name: "finalView", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "finalView")
+        self.show(controller, sender: self)
     }
     
     override func viewDidLoad() {
