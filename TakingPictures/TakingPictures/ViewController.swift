@@ -8,13 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
     var newImageStore: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.backgroundColor = .secondarySystemBackground
+
     }
     
     @IBAction func didTapCameraButton() {
