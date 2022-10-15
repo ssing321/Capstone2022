@@ -1,5 +1,5 @@
 //
-//  finalView.swift
+//  firstFinal.swift
 //  TakingPictures
 //
 //  Created by Shaswat Singh on 10/14/22.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class finalView: UITabBarController {
-    @IBOutlet var secondImage: UIImageView!
-    
+class firstFinal: UIViewController {
+
+    @IBOutlet var firstImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
-    
-    
+
 }

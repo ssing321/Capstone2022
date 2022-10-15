@@ -36,7 +36,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-        self.uploadImage.contentMode = .scaleAspectFit
         self.uploadImage.image = image
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         self.dismiss(animated: true) {
@@ -44,10 +43,23 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
             let controller = storyboard.instantiateViewController(withIdentifier: "finalView")
             self.show(controller, sender: self)
         }
+}
+    
+    func fixOrientation(img: UIImage) -> UIImage {
+        if (img.imageOrientation == .up) {
+            return img
+        }
+        UIGraphicsBeginImageContextWithOptions(img.size, false, img.scale)
+        let rect = CGRect(x: 0, y: 0, width: img.size.width, height: img.size.height)
+        img.draw(in: rect)
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return normalizedImage
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newImageUploadStore = fixOrientation(img: newImageUploadStore!)
         uploadImage.image = newImageUploadStore
         uploadImage.alpha = 0.5
     }

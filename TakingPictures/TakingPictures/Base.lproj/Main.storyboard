@@ -25,9 +25,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-03-6Fz">
                                 <rect key="frame" x="20" y="738" width="151" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Upload">
-                                    <color key="baseBackgroundColor" red="0.35686274509803922" green="0.35686274509803922" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Upload" cornerStyle="large">
+                                    <color key="baseBackgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapImportButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbH-2j-F4p"/>
@@ -36,9 +37,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIg-cJ-VMb">
                                 <rect key="frame" x="255" y="737" width="139" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Camera">
-                                    <color key="baseBackgroundColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Camera" cornerStyle="large">
+                                    <color key="baseBackgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapCameraButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="he2-Xh-w6W"/>
@@ -47,9 +49,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KdM-Lb-sxb" customClass="postButton">
                                 <rect key="frame" x="138" y="645" width="139" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="LIVE">
-                                    <color key="baseBackgroundColor" red="0.35686274509999999" green="0.35686274509999999" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="LIVE" cornerStyle="large">
+                                    <color key="baseBackgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="didTapPostButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="TMU-Ae-wvv"/>
@@ -57,11 +60,14 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.36020953909999998" green="0.0085847415039999996" blue="0.33951952769999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="vCb-QN-P7i"/>
                     <connections>
+                        <outlet property="Cbutton" destination="EIg-cJ-VMb" id="q8B-au-X6u"/>
+                        <outlet property="Ibutton" destination="Jl9-03-6Fz" id="uDj-ZI-lxY"/>
+                        <outlet property="Lbutton" destination="KdM-Lb-sxb" id="S1R-9c-4ID"/>
                         <outlet property="button" destination="KdM-Lb-sxb" id="YdR-BO-3JM"/>
                         <outlet property="imageView" destination="hsj-bi-VcA" id="JNq-WP-eMt"/>
                         <segue destination="wg0-oa-Zba" kind="show" identifier="upload" id="Lvi-9u-L1I"/>
@@ -103,14 +109,14 @@
                                     <action selector="sliderDidSlide:" destination="wg0-oa-Zba" eventType="valueChanged" id="Ucv-Nb-2ai"/>
                                 </connections>
                             </slider>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-7a-cPm" customClass="ScaledHeightImageView" customModule="TakingPictures" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-7a-cPm">
                                 <rect key="frame" x="0.0" y="92" width="414" height="569"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z3B-Ow-qA5"/>
-                        <color key="backgroundColor" red="0.36020953909999998" green="0.13164333780000001" blue="0.33745105879999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZpQ-WP-Tts"/>
                     <connections>

@@ -12,11 +12,19 @@ class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
+    
+    @IBOutlet var Lbutton: UIButton!
+    @IBOutlet var Cbutton: UIButton!
+    @IBOutlet var Ibutton: UIButton!
+    
     var newImageStore: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Lbutton.layer.cornerRadius = 20.0
+        Cbutton.layer.cornerRadius = 20.0
+        Ibutton.layer.cornerRadius = 20.0
+        Lbutton.alpha = 0
     }
     
     @IBAction func didTapCameraButton() {
@@ -25,6 +33,7 @@ class ViewController: UIViewController {
         picker.sourceType = .camera
         picker.delegate = self
         present(picker, animated: true)
+        Lbutton.alpha = 1
     }
     @IBAction func didTapImportButton() {
         //importing photos
@@ -33,6 +42,7 @@ class ViewController: UIViewController {
         vc.delegate = self
         vc.allowsEditing = true
         present(vc, animated: true)
+        Lbutton.alpha = 1
     }
     
     @IBAction func didTapPostButton() {
