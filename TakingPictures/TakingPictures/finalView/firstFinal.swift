@@ -12,8 +12,18 @@ class firstFinal: UIViewController {
     @IBOutlet var firstImage: UIImageView!
     @IBOutlet var navF: UINavigationBar!
     
+    @IBAction func pressSaveFirst(_ sender: UIBarButtonItem) {
+        UIImageWriteToSavedPhotosAlbum(firstImage.image!, nil, nil, nil)
+    }
+ 
+    @IBAction func pressShareFirst(_ sender: Any) {
+        }
+    
+    var image: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(false, animated: false)
+        firstImage.image = image
     }
 }

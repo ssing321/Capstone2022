@@ -13,12 +13,12 @@
         <!--firstFinal-->
         <scene sceneID="gc7-B0-1v0">
             <objects>
-                <viewController title="firstFinal" id="RTg-Re-rp5" customClass="firstFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="firstFinal" title="firstFinal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RTg-Re-rp5" customClass="firstFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EEh-lf-vnJ">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="430-JS-MIO">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="430-JS-MIO">
                                 <rect key="frame" x="0.0" y="39" width="390" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,8 +30,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="First Image" id="HXV-bc-T8y">
-                                        <barButtonItem key="leftBarButtonItem" title="Save" id="VPy-ek-P6I"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="bhK-dr-ptJ"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Save" id="VPy-ek-P6I">
+                                            <connections>
+                                                <action selector="pressSaveFirst:" destination="RTg-Re-rp5" id="Frd-57-YFU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="bhK-dr-ptJ">
+                                            <connections>
+                                                <action selector="pressShareFirst:" destination="RTg-Re-rp5" id="rqI-Bi-Wai"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -67,12 +75,12 @@
         <!--secondFinal-->
         <scene sceneID="iJk-vs-mD2">
             <objects>
-                <viewController title="secondFinal" id="emu-IO-Jih" customClass="secondFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondFinal" title="secondFinal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="emu-IO-Jih" customClass="secondFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6J-cH-3K6">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-cJ-Y7O">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-cJ-Y7O">
                                 <rect key="frame" x="-2" y="41" width="390" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,8 +89,16 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Second Image" id="LMq-Tu-PBR">
-                                        <barButtonItem key="leftBarButtonItem" title="Save" id="rcM-z7-Bec"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Share" id="czT-yI-r3t"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Save" id="rcM-z7-Bec">
+                                            <connections>
+                                                <action selector="pressSaveSecond:" destination="emu-IO-Jih" id="M5R-ks-l9B"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="czT-yI-r3t">
+                                            <connections>
+                                                <action selector="pressShareSecond:" destination="emu-IO-Jih" id="HiI-UY-qN7"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -118,7 +134,8 @@
         <!--Final View-->
         <scene sceneID="BuE-Fa-2kq">
             <objects>
-                <tabBarController storyboardIdentifier="finalView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TDg-Yr-c0l" customClass="finalView" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="finalView" id="TDg-Yr-c0l" customClass="finalView" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="QF1-5I-f5Y"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jqz-kO-d7V">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

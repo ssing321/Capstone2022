@@ -22,10 +22,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jl9-03-6Fz">
-                                <rect key="frame" x="20" y="738" width="78.5" height="60"/>
+                                <rect key="frame" x="20" y="738" width="125" height="60"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="CJf-tY-OEW"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="Cvz-dO-qag"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZaZ-p1-SgH"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Upload" cornerStyle="large">
@@ -36,10 +37,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIg-cJ-VMb">
-                                <rect key="frame" x="310.5" y="737" width="83.5" height="60"/>
+                                <rect key="frame" x="269" y="737" width="125" height="60"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="GJ3-R6-fUp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="NkG-OV-9DS"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Camera" cornerStyle="large">
@@ -53,7 +54,7 @@
                                 <rect key="frame" x="138" y="645" width="138" height="60"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="DEq-X3-qXn"/>
+                                    <constraint firstAttribute="height" constant="60" id="C36-DU-VAK"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="LIVE" cornerStyle="large">
@@ -68,18 +69,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EIg-cJ-VMb" secondAttribute="bottom" constant="65" id="0nm-qf-5nB"/>
-                            <constraint firstItem="KdM-Lb-sxb" firstAttribute="top" secondItem="hsj-bi-VcA" secondAttribute="bottom" constant="57" id="1fg-dj-s1E"/>
-                            <constraint firstItem="EIg-cJ-VMb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GeT-tv-N9u"/>
-                            <constraint firstItem="hsj-bi-VcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R9c-MH-pmV"/>
-                            <constraint firstItem="hsj-bi-VcA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rkb-b5-wcG"/>
-                            <constraint firstItem="KdM-Lb-sxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="Sxl-nd-HjW"/>
-                            <constraint firstItem="KdM-Lb-sxb" firstAttribute="centerX" secondItem="hsj-bi-VcA" secondAttribute="centerX" id="XTa-on-nYe"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jl9-03-6Fz" secondAttribute="bottom" constant="64" id="fL8-uI-pHJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KdM-Lb-sxb" secondAttribute="bottom" constant="157" id="fRT-nJ-cOt"/>
-                            <constraint firstItem="Jl9-03-6Fz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nOj-3e-DqH"/>
-                            <constraint firstItem="EIg-cJ-VMb" firstAttribute="leading" secondItem="Jl9-03-6Fz" secondAttribute="trailing" constant="212" id="roz-CT-epU"/>
-                            <constraint firstItem="hsj-bi-VcA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-16" id="yUc-3z-2Ug"/>
+                            <constraint firstItem="Jl9-03-6Fz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="25D-R3-iFA"/>
+                            <constraint firstItem="Jl9-03-6Fz" firstAttribute="top" secondItem="KdM-Lb-sxb" secondAttribute="bottom" constant="33" id="2YQ-Hh-oZU"/>
+                            <constraint firstItem="hsj-bi-VcA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-16" id="6Re-Fm-L8I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EIg-cJ-VMb" secondAttribute="bottom" constant="65" id="G2m-yv-AQU"/>
+                            <constraint firstItem="KdM-Lb-sxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="Ihs-cn-Qq0"/>
+                            <constraint firstItem="KdM-Lb-sxb" firstAttribute="top" secondItem="hsj-bi-VcA" secondAttribute="bottom" constant="57" id="MZK-2n-Luv"/>
+                            <constraint firstItem="EIg-cJ-VMb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Rfa-bu-0dN"/>
+                            <constraint firstItem="hsj-bi-VcA" firstAttribute="centerX" secondItem="KdM-Lb-sxb" secondAttribute="centerX" id="ZrO-DS-oRt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jl9-03-6Fz" secondAttribute="bottom" constant="64" id="aHS-aG-qAV"/>
+                            <constraint firstItem="hsj-bi-VcA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hpg-cb-11p"/>
+                            <constraint firstItem="EIg-cJ-VMb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jl9-03-6Fz" secondAttribute="trailing" constant="8" symbolic="YES" id="lF2-AW-Vzv"/>
+                            <constraint firstItem="hsj-bi-VcA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lb6-O5-Grr"/>
+                            <constraint firstItem="EIg-cJ-VMb" firstAttribute="top" secondItem="KdM-Lb-sxb" secondAttribute="bottom" constant="32" id="mU2-2a-zS2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vCb-QN-P7i"/>
@@ -144,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XqZ-w4-iCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="-283"/>
+            <point key="canvasLocation" x="1993" y="-260"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cak-Yv-fUO">
