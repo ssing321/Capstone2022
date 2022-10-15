@@ -12,12 +12,11 @@ class ViewController: UIViewController {
     
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var button: UIButton!
-    
     @IBOutlet var Lbutton: UIButton!
     @IBOutlet var Cbutton: UIButton!
     @IBOutlet var Ibutton: UIButton!
     
-    var newImageStore: UIImage!
+    var firstImageStore: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +27,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapCameraButton() {
-        //camera
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
@@ -36,7 +34,6 @@ class ViewController: UIViewController {
         Lbutton.alpha = 1
     }
     @IBAction func didTapImportButton() {
-        //importing photos
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
@@ -46,13 +43,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapPostButton() {
-        self.newImageStore = imageView.image
+        self.firstImageStore = imageView.image
         performSegue(withIdentifier: "upload", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! uploadView
-        vc.newImageUploadStore = self.newImageStore
+        vc.firstImageInSecondView = self.firstImageStore
     }
     
     func fixOrientation(img: UIImage) -> UIImage {
@@ -78,9 +75,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
-        UIImage else {
+                
+        UIImage
+            else {
             return
         }
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         imageView.image = image
         imageView.image = fixOrientation(img: imageView.image!)
     }

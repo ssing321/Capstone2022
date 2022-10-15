@@ -10,10 +10,9 @@ import UIKit
 class secondFinal: UIViewController {
 
     @IBOutlet var secondImage: UIImageView!
+    @IBOutlet var nacS: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.setHidesBackButton(false, animated: false)
     }
-
 }
