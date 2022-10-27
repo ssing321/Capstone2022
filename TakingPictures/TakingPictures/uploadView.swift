@@ -10,6 +10,7 @@ import UIKit
 
 class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     
+    @IBOutlet weak var sliderAlpha: UISlider!
     @IBOutlet weak var uploadImage: UIImageView!
     
     @IBOutlet weak var UILabel: UILabel!
@@ -24,14 +25,12 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     @IBAction func sliderDidSlide(_ sender: UISlider)
     {
-        let value = sender.value
+        var value = sender.value
         uploadImage.alpha = CGFloat(exactly: value)!
+        UILabel.text = String(sliderAlpha.value*100)
         finalvalue = Int(value)
         globalValue = finalvalue
         imageStore = uploadImage.image
-        
-        UILabel.text = String(Int(value))
-        
     }
     
     @IBAction func startCameraLiveOverlay(_sender : UIBarButtonItem) {
@@ -86,5 +85,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         super.viewDidLoad()
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
+        UILabel.text = String(Int(0.5))
+//        UILabel.text = String(Int(uploadImage.alpha))
     }
 }
