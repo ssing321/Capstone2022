@@ -58,7 +58,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
-//        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
         secondImageStore = image
         
         self.dismiss(animated: true) {
@@ -72,6 +71,19 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         }
     }
     
+    
+//if user cancels on live view
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("Null")
+        self.dismiss(animated: true)
+//        uploadImage.image = nil
+//        uploadImage.isHidden = false
+//        super.viewDidLoad()
+//        uploadImage.image = self.firstImageInSecondView
+//        uploadImage.alpha = CGFloat(self.globalValue)
+        self.viewDidLoad()
+        print(uploadImage.image)
+    }
     
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
