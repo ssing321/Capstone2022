@@ -12,6 +12,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     @IBOutlet weak var uploadImage: UIImageView!
     
+    @IBOutlet weak var UILabel: UILabel!
     
     var firstImageInSecondView: UIImage!
     var finalvalue: Int = 0
@@ -28,6 +29,9 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         finalvalue = Int(value)
         globalValue = finalvalue
         imageStore = uploadImage.image
+        
+        UILabel.text = String(Int(value))
+        
     }
     
     @IBAction func startCameraLiveOverlay(_sender : UIBarButtonItem) {

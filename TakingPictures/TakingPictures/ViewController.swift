@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         Lbutton.alpha = 0
     }
     
+    
     @IBAction func didTapCameraButton() {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -85,4 +86,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         imageView.image = fixOrientation(img: imageView.image!)
     }
 }
+
+
 
