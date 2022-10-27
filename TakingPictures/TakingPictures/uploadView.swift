@@ -10,8 +10,10 @@ import UIKit
 
 class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     
+    @IBOutlet weak var sliderAlpha: UISlider!
     @IBOutlet weak var uploadImage: UIImageView!
     
+    @IBOutlet weak var UILabel: UILabel!
     
     var firstImageInSecondView: UIImage!
     var finalvalue: Int = 0
@@ -25,6 +27,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     {
         let value = sender.value
         uploadImage.alpha = CGFloat(exactly: value)!
+        UILabel.text = String(sliderAlpha.value*100)
         finalvalue = Int(value)
         globalValue = finalvalue
         imageStore = uploadImage.image
@@ -94,5 +97,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         super.viewDidLoad()
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
+        UILabel.text = String(Int(50))
     }
 }
