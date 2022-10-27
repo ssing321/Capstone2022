@@ -25,7 +25,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     @IBAction func sliderDidSlide(_ sender: UISlider)
     {
-        var value = sender.value
+        let value = sender.value
         uploadImage.alpha = CGFloat(exactly: value)!
         UILabel.text = String(sliderAlpha.value*100)
         finalvalue = Int(value)
@@ -85,7 +85,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         super.viewDidLoad()
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
-        UILabel.text = String(Int(0.5))
-//        UILabel.text = String(Int(uploadImage.alpha))
+        UILabel.text = String(Int(50))
     }
 }
