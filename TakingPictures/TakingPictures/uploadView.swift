@@ -27,7 +27,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     {
         let value = sender.value
         uploadImage.alpha = CGFloat(exactly: value)!
-        UILabel.text = String(sliderAlpha.value*100)
+        UILabel.text = String(round(sliderAlpha.value*100))
         finalvalue = Int(value)
         globalValue = finalvalue
         imageStore = uploadImage.image
@@ -77,15 +77,17 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
 //if user cancels on live view
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Null")
-        self.dismiss(animated: true)
+//        print("Null")
+//        self.dismiss(animated: true)
 //        uploadImage.image = nil
 //        uploadImage.isHidden = false
 //        super.viewDidLoad()
-//        uploadImage.image = self.firstImageInSecondView
-//        uploadImage.alpha = CGFloat(self.globalValue)
-        self.viewDidLoad()
-        print(uploadImage.image)
+//        self.viewWillAppear(true)
+//        print(uploadImage.image)
+        dismiss(animated: true, completion: nil)
+        uploadImage.image = self.firstImageInSecondView
+        uploadImage.alpha = CGFloat(self.globalValue)
+//        UILabel.text = String(Int(1000))
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,6 +99,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         super.viewDidLoad()
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
-        UILabel.text = String(Int(50))
+        UILabel.text = String(Int(50.0))
     }
 }
