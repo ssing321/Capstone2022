@@ -34,7 +34,7 @@ class secondFinal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.setHidesBackButton(false, animated: false)
+        self.navigationItem.setHidesBackButton(false, animated: false)
         secondImage.image = image
     }
 }
