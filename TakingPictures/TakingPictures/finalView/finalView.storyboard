@@ -114,7 +114,6 @@
                         <constraints>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="centerX" secondItem="v6J-cH-3K6" secondAttribute="centerX" id="9tq-Qc-sfm"/>
                             <constraint firstItem="W6c-xz-tvM" firstAttribute="bottom" secondItem="UrI-P7-A4j" secondAttribute="bottom" constant="35" id="C2s-gb-WiT"/>
-                            <constraint firstItem="UrI-P7-A4j" firstAttribute="centerY" secondItem="v6J-cH-3K6" secondAttribute="centerY" id="FG0-GK-jMy"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="leading" secondItem="W6c-xz-tvM" secondAttribute="leading" id="G6D-Bc-Pza"/>
                             <constraint firstItem="W6c-xz-tvM" firstAttribute="trailing" secondItem="JDu-cJ-Y7O" secondAttribute="trailing" constant="2" id="HEi-yb-e3u"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="top" secondItem="W6c-xz-tvM" secondAttribute="top" constant="71" id="Pn7-Is-VCu"/>
