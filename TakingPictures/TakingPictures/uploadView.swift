@@ -8,7 +8,7 @@
 import UIKit
 
 
-class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
+class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigationControllerDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var sliderAlpha: UISlider!
     @IBOutlet weak var uploadImage: UIImageView!
@@ -19,7 +19,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     var finalvalue: Int = 0
     var imageStore: UIImage!
     var secondImageStore: UIImage!
-    
     var globalValue: Int = Int(0.5)
     
     
@@ -27,13 +26,15 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     {
         let value = sender.value
         uploadImage.alpha = CGFloat(exactly: value)!
-        UILabel.text = String(sliderAlpha.value*100)
+        UILabel.text = String(round(sliderAlpha.value*100))
         finalvalue = Int(value)
         globalValue = finalvalue
         imageStore = uploadImage.image
     }
     
     @IBAction func startCameraLiveOverlay(_sender : UIBarButtonItem) {
+
+
         let picker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
             
@@ -44,6 +45,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
             uploadImage.frame = CGRect(x: 0, y: 118, width: 420, height: 560)
             myView.addSubview(uploadImage)
             picker.cameraOverlayView!.addSubview(myView)
+        
             
             NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "_UIImagePickerControllerUserDidCaptureItem"), object:nil, queue:nil, using: { note in
                 //only the second image
@@ -56,6 +58,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
 
             self.present(picker, animated: true, completion: nil)
         }
+        
     }
     
     
@@ -75,28 +78,26 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     }
     
     
-//if user cancels on live view
+    //if user cancels on live view
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Null")
-        self.dismiss(animated: true)
-//        uploadImage.image = nil
-//        uploadImage.isHidden = false
-//        super.viewDidLoad()
-//        uploadImage.image = self.firstImageInSecondView
-//        uploadImage.alpha = CGFloat(self.globalValue)
-        self.viewDidLoad()
-        print(uploadImage.image)
+        dismiss(animated: true, completion: nil)
+        uploadImage.image = firstImageInSecondView
+        uploadImage.alpha = CGFloat(0.5)
+        print(uploadImage.isHidden)
     }
     
+    
+    // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
             super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
         }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
-        UILabel.text = String(Int(50))
+        UILabel.text = String(Int(50.0))
     }
+    
+    
 }

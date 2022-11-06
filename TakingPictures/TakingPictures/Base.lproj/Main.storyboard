@@ -145,6 +145,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Z3B-Ow-qA5"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZpQ-WP-Tts"/>
                     <connections>
