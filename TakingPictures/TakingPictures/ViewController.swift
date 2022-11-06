@@ -81,11 +81,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             else {
             return
         }
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         imageView.image = image
         imageView.image = fixOrientation(img: imageView.image!)
     }
 }
-
-
-
