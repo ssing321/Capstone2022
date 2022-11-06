@@ -59,13 +59,13 @@
                                     <action selector="sliderValueChangeAction:" destination="RTg-Re-rp5" eventType="valueChanged" id="6lh-RQ-MRC"/>
                                 </connections>
                             </slider>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Brightness/Contrast" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aed-2O-BnT">
-                                <rect key="frame" x="70" y="693" width="290" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brightness/Contrast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi1-N7-6qt">
+                                <rect key="frame" x="80" y="703" width="290" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFp-vW-H2h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -138,22 +138,23 @@
                                     <constraint firstAttribute="height" constant="373" id="Mo3-2K-ny9"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Brightness/Contrast" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3G-D5-hLv">
-                                <rect key="frame" x="80" y="698" width="290" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness/Contrast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHm-Ks-Dbg">
+                                <rect key="frame" x="72" y="693" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W6c-xz-tvM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8rC-ll-HIV" firstAttribute="centerX" secondItem="UrI-P7-A4j" secondAttribute="centerX" constant="-2" id="4DU-3X-bhg"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="leading" secondItem="v6J-cH-3K6" secondAttribute="leading" constant="2" id="Dpb-eD-AfY"/>
+                            <constraint firstItem="hHm-Ks-Dbg" firstAttribute="top" secondItem="8rC-ll-HIV" secondAttribute="bottom" constant="28" id="FoX-5D-ZnY"/>
                             <constraint firstItem="W6c-xz-tvM" firstAttribute="trailing" secondItem="JDu-cJ-Y7O" secondAttribute="trailing" constant="2" id="HEi-yb-e3u"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="top" secondItem="JDu-cJ-Y7O" secondAttribute="bottom" constant="47" id="SJ6-8C-Ab3"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="top" secondItem="v6J-cH-3K6" secondAttribute="top" constant="162" id="cbv-kn-Dku"/>
+                            <constraint firstItem="hHm-Ks-Dbg" firstAttribute="leading" secondItem="W6c-xz-tvM" secondAttribute="leading" constant="72" id="it1-f7-It7"/>
                             <constraint firstItem="8rC-ll-HIV" firstAttribute="leading" secondItem="W6c-xz-tvM" secondAttribute="leading" constant="60" id="th7-aV-8C6"/>
                             <constraint firstItem="UrI-P7-A4j" firstAttribute="centerX" secondItem="JDu-cJ-Y7O" secondAttribute="centerX" constant="2" id="vil-ZR-lBB"/>
                             <constraint firstItem="JDu-cJ-Y7O" firstAttribute="leading" secondItem="v6J-cH-3K6" secondAttribute="leadingMargin" constant="-18" id="yVj-Ga-p9S"/>
