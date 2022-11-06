@@ -62,7 +62,7 @@ class firstFinal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(false, animated: false)
+//        self.navigationItem.setHidesBackButton(false, animated: false)
         firstImage.image = image
     }
 }
