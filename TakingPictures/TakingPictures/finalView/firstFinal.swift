@@ -11,11 +11,11 @@ class firstFinal: UIViewController {
 
     @IBOutlet var firstImage: UIImageView!
     @IBOutlet var navF: UINavigationBar!
-    
-    //brightness/contrast slider
+    var storeImageOne: UIImage?
     public var brightness : Float = 0.0
     public var contrast : Float = 1.0
     var filter: CIFilter? = CIFilter(name: "CIColorControls")
+    
     func applyImageFilter(for image: UIImage) -> UIImage? {
             guard let sourceImage = CIImage(image: image),
             let filter = self.filter else { return nil }
@@ -27,6 +27,7 @@ class firstFinal: UIViewController {
             let filteredImage = UIImage(cgImage: outputCGImage, scale: image.scale, orientation: image.imageOrientation)
             return filteredImage
         }
+    
     @IBAction func sliderValueChangeAction(_ sender: UISlider) {
         if sender.tag == 0 {
             self.brightness = sender.value
@@ -35,19 +36,6 @@ class firstFinal: UIViewController {
                 self.contrast = sender.value
         }
         firstImage.image = self.applyImageFilter(for: image!)
-    }
-    //
-    
-    
-    @IBAction func pressSaveFirst(_ sender: UIBarButtonItem) {
-        UIImageWriteToSavedPhotosAlbum(firstImage.image!, nil, nil, nil)
-        var dialogMessage = UIAlertController(title: "Saved", message: "First Image Saved", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-             print("Ok button tapped")
-          })
-         dialogMessage.addAction(ok)
-        self.present(dialogMessage, animated: true, completion: nil)
-
     }
  
     @IBAction func pressShareFirst(_ sender: Any) {

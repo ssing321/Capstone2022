@@ -20,7 +20,7 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     var imageStore: UIImage!
     var secondImageStore: UIImage!
     var globalValue: Int = Int(0.5)
-    
+        
     
     @IBAction func sliderDidSlide(_ sender: UISlider)
     {
@@ -33,11 +33,8 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     }
     
     @IBAction func startCameraLiveOverlay(_sender : UIBarButtonItem) {
-
-
         let picker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
-            
             picker.sourceType = .camera
             picker.delegate = self
             picker.allowsEditing = true
@@ -45,17 +42,13 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
             uploadImage.frame = CGRect(x: 0, y: 118, width: 420, height: 560)
             myView.addSubview(uploadImage)
             picker.cameraOverlayView!.addSubview(myView)
-        
-            
             NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "_UIImagePickerControllerUserDidCaptureItem"), object:nil, queue:nil, using: { note in
                 //only the second image
                 picker.cameraOverlayView = nil
             })
-            
             NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "_UIImagePickerControllerUserDidRejectItem"), object:nil, queue:nil, using: { note in
                 picker.cameraOverlayView = self.uploadImage
             })
-
             self.present(picker, animated: true, completion: nil)
         }
         
@@ -65,7 +58,6 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     func imagePickerController(_ picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
         let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
         secondImageStore = image
-        
         self.dismiss(animated: true) {
             let storyboard = UIStoryboard(name: "finalView", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "finalView") as! UITabBarController?
@@ -73,8 +65,11 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
             secondVC.image = self.secondImageStore
             let firstVC = (controller?.self.viewControllers?[1])! as! firstFinal
             firstVC.image = self.firstImageInSecondView
+            let bothVC = (controller?.self.viewControllers?[2])! as! bothImage
+            bothVC.secondImageL = self.secondImageStore
+            bothVC.firstImageL = self.firstImageInSecondView
             self.show(controller!, sender: self)
-        }
+            }
     }
     
     
@@ -98,6 +93,5 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
         uploadImage.alpha = 0.5
         UILabel.text = String(Int(50.0))
     }
-    
     
 }

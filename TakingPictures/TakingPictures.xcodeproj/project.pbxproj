@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		542AC2302925BEC8003B688A /* bothImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542AC22F2925BEC8003B688A /* bothImage.swift */; };
 		54A3F20328FA556A008F132F /* finalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3F20228FA556A008F132F /* finalView.swift */; };
 		54A3F20528FA7B1F008F132F /* firstFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3F20428FA7B1F008F132F /* firstFinal.swift */; };
 		54A3F20728FA7B2E008F132F /* secondFinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A3F20628FA7B2E008F132F /* secondFinal.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		542AC22F2925BEC8003B688A /* bothImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bothImage.swift; sourceTree = "<group>"; };
 		54A3F20228FA556A008F132F /* finalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finalView.swift; sourceTree = "<group>"; };
 		54A3F20428FA7B1F008F132F /* firstFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstFinal.swift; sourceTree = "<group>"; };
 		54A3F20628FA7B2E008F132F /* secondFinal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondFinal.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				54A3F20228FA556A008F132F /* finalView.swift */,
 				54A3F20428FA7B1F008F132F /* firstFinal.swift */,
 				54A3F20628FA7B2E008F132F /* secondFinal.swift */,
+				542AC22F2925BEC8003B688A /* bothImage.swift */,
 			);
 			path = finalView;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			files = (
 				B85FD571286B98AD000CFA86 /* ViewController.swift in Sources */,
 				B85FD56D286B98AD000CFA86 /* AppDelegate.swift in Sources */,
+				542AC2302925BEC8003B688A /* bothImage.swift in Sources */,
 				54A3F20328FA556A008F132F /* finalView.swift in Sources */,
 				B85FD56F286B98AD000CFA86 /* SceneDelegate.swift in Sources */,
 				9836D011287105D100F3A3AF /* uploadView.swift in Sources */,

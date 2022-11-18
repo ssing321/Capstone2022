@@ -8,10 +8,7 @@
 import UIKit
 
 class secondFinal: UIViewController {
-    
     var image: UIImage? = nil
-    
-   
     //brightness/contrast slider
     public var brightness : Float = 0.0
     public var contrast : Float = 1.0
@@ -36,18 +33,7 @@ class secondFinal: UIViewController {
         }
         secondImage.image = self.applyImageFilter(for: image!)
     }
-    //
     
-    
-    @IBAction func pressSaveSecond(_ sender: UIBarButtonItem) {
-        UIImageWriteToSavedPhotosAlbum(secondImage.image!, nil, nil, nil)
-        var dialogMessage = UIAlertController(title: "Saved", message: "Second Image Saved", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-             print("Ok button tapped")
-          })
-         dialogMessage.addAction(ok)
-        self.present(dialogMessage, animated: true, completion: nil)
-    }
 
     @IBAction func pressShareSecond(_ sender: UIBarButtonItem) {
         let imageToShare = [ image! ]
