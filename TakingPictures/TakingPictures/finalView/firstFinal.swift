@@ -12,32 +12,29 @@ class firstFinal: UIViewController {
     @IBOutlet var firstImage: UIImageView!
     @IBOutlet var navF: UINavigationBar!
     var storeImageOne: UIImage?
-    public var brightness : Float = 0.0
-    public var contrast : Float = 1.0
-    var filter: CIFilter? = CIFilter(name: "CIColorControls")
-    
-    func applyImageFilter(for image: UIImage) -> UIImage? {
-            guard let sourceImage = CIImage(image: image),
-            let filter = self.filter else { return nil }
-            filter.setValue(sourceImage, forKey: kCIInputImageKey)
-            filter.setValue(self.contrast, forKey: kCIInputContrastKey)
-            filter.setValue(self.brightness, forKey: kCIInputBrightnessKey)
-            guard let output = filter.outputImage else { return nil }
-            guard let outputCGImage = CIContext().createCGImage(output, from: output.extent) else { return nil }
-            let filteredImage = UIImage(cgImage: outputCGImage, scale: image.scale, orientation: image.imageOrientation)
-            return filteredImage
-        }
-    
-    @IBAction func sliderValueChangeAction(_ sender: UISlider) {
-        if sender.tag == 0 {
-            self.brightness = sender.value
-        }
-        else if sender.tag == 1 {
-                self.contrast = sender.value
-        }
-        firstImage.image = self.applyImageFilter(for: image!)
-    }
+    var aCIImage = CIImage();
+    var contrastFilter: CIFilter!;
+    var brightnessFilter: CIFilter!;
+    var context = CIContext();
+    var outputImage = CIImage();
+    var newUIImage = UIImage();
  
+    @IBAction func brightnessSlider(_ sender: UISlider) {
+        brightnessFilter.setValue(NSNumber(value: sender.value), forKey: "inputBrightness");
+        outputImage = brightnessFilter.outputImage!;
+        let imageRef = context.createCGImage(outputImage, from: outputImage.extent)
+        newUIImage = UIImage(cgImage: imageRef!)
+        firstImage.image = newUIImage;
+    }
+    
+    @IBAction func contrastSlider(_ sender: UISlider) {
+        contrastFilter.setValue(NSNumber(value: sender.value), forKey: "inputContrast")
+        outputImage = contrastFilter.outputImage!;
+        let cgimg = context.createCGImage(outputImage, from: outputImage.extent)
+        newUIImage = UIImage(cgImage: cgimg!)
+        firstImage.image = newUIImage;
+    }
+    
     @IBAction func pressShareFirst(_ sender: Any) {
         let imageToShare = [ image! ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
@@ -50,7 +47,14 @@ class firstFinal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationItem.setHidesBackButton(false, animated: false)
         firstImage.image = image
+        let aUIImage = firstImage.image;
+        let aCGImage = aUIImage?.cgImage;
+        aCIImage = CIImage(cgImage: aCGImage!)
+        context = CIContext(options: nil);
+        contrastFilter = CIFilter(name: "CIColorControls");
+        contrastFilter.setValue(aCIImage, forKey: "inputImage")
+        brightnessFilter = CIFilter(name: "CIColorControls");
+        brightnessFilter.setValue(aCIImage, forKey: "inputImage")
     }
 }
