@@ -20,6 +20,8 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     var imageStore: UIImage!
     var secondImageStore: UIImage!
     var globalValue: Int = Int(0.5)
+    
+    var storeImageCheck : UIImage!
         
     
     @IBAction func sliderDidSlide(_ sender: UISlider)
@@ -74,13 +76,16 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
     
     
     //if user cancels on live view
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-        uploadImage.image = firstImageInSecondView
-        uploadImage.alpha = CGFloat(0.5)
-        print(uploadImage.isHidden)
-    }
-    
+//    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+////        uploadImage.removeFromSuperview()
+//        uploadImage.image = storeImageCheck
+//        uploadImage.alpha = CGFloat(0.5)
+//        print("appear")
+//
+//    }
+
+
     
     // Dispose of any resources that can be recreated.
     override func didReceiveMemoryWarning() {
@@ -89,9 +94,12 @@ class uploadView: UIViewController,UIImagePickerControllerDelegate ,UINavigation
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        storeImageCheck = firstImageInSecondView
         uploadImage.image = firstImageInSecondView
         uploadImage.alpha = 0.5
         UILabel.text = String(Int(50.0))
+        uploadImage.contentMode = .scaleAspectFit
+        uploadImage.clipsToBounds = true
     }
     
 }
