@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet var Cbutton: UIButton!
     @IBOutlet var Ibutton: UIButton!
     
+    var checkUploadOrClicker: Int!
+    
     var firstImageStore: UIImage!
     
     override func viewDidLoad() {
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         picker.delegate = self
         present(picker, animated: true)
         Lbutton.alpha = 1
+        checkUploadOrClicker = 1
     }
     @IBAction func didTapImportButton() {
         let vc = UIImagePickerController()
@@ -41,6 +44,7 @@ class ViewController: UIViewController {
         vc.allowsEditing = true
         present(vc, animated: true)
         Lbutton.alpha = 1
+        checkUploadOrClicker = 0
     }
     
     @IBAction func didTapPostButton() {
@@ -81,11 +85,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             else {
             return
         }
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         imageView.image = image
         imageView.image = fixOrientation(img: imageView.image!)
+        
+        if(checkUploadOrClicker == 0){
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+        }
     }
 }
-
-
-
