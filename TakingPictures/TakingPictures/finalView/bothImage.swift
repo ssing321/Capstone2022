@@ -14,8 +14,9 @@ class bothImage: UIViewController {
     var firstImageL: UIImage?
     var secondImageL: UIImage?
     
+    //for sharing both the images together
     @IBAction func shareBothImages(_ sender: Any) {
-        let imageToShare = [ firstImageL!, secondImageL! ]
+        let imageToShare = [ firstImageL!, secondImageL! ] //sharing together
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
                 activityViewController.popoverPresentationController?.sourceView = self.view
                 activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
@@ -24,6 +25,7 @@ class bothImage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //adding both images to both image views 
         imageOne.image = firstImageL
         imageTwo.image = secondImageL
         // set observer for UIApplication.willEnterForegroundNotification

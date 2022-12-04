@@ -16,6 +16,7 @@ class secondFinal: UIViewController {
     var outputImage = CIImage();
     var newUIImage = UIImage();
 
+    //brightness slider for the first image tab
     @IBAction func brightnessSlider(_ sender: UISlider) {
         brightnessFilter.setValue(NSNumber(value: sender.value), forKey: "inputBrightness");
         outputImage = brightnessFilter.outputImage!;
@@ -25,7 +26,7 @@ class secondFinal: UIViewController {
     }
     
     
-    
+    //contrast slider for the first image tab
     @IBAction func contrastSlider(_ sender: UISlider) {
         contrastFilter.setValue(NSNumber(value: sender.value), forKey: "inputContrast")
         outputImage = contrastFilter.outputImage!;
@@ -36,7 +37,7 @@ class secondFinal: UIViewController {
     
 
     
-
+    //if the share button is pressd on the top right
     @IBAction func pressShareSecond(_ sender: UIBarButtonItem) {
         let imageToShare = [ image! ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
@@ -51,6 +52,8 @@ class secondFinal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         secondImage.image = image
+        
+        //initial brightness and contrast
         let aUIImage = secondImage.image;
         let aCGImage = aUIImage?.cgImage;
         aCIImage = CIImage(cgImage: aCGImage!)
