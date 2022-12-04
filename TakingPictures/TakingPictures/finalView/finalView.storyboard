@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -20,12 +20,11 @@
             <objects>
                 <viewController storyboardIdentifier="bothImage" id="68Y-u3-4Wn" customClass="bothImage" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m8M-6a-6C1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-zo-T4C">
-                                <rect key="frame" x="-7" y="59" width="416" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-zo-T4C">
+                                <rect key="frame" x="-7" y="70" width="432" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
@@ -39,25 +38,28 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JTI-Pb-FYk">
-                                <rect key="frame" x="22" y="103" width="372" height="345"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="345" id="dJt-ZV-0gP"/>
-                                </constraints>
+                                <rect key="frame" x="22" y="114" width="388" height="370"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jbw-bU-TpX">
-                                <rect key="frame" x="22" y="456" width="372" height="335"/>
+                                <rect key="frame" x="22" y="492" width="388" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="335" id="lr4-it-XC2"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A5u-WA-hNR"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="top" secondItem="m8M-6a-6C1" secondAttribute="top" constant="103" id="0HH-Mr-dLq"/>
-                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="leading" secondItem="jbw-bU-TpX" secondAttribute="leading" id="Yia-X0-T53"/>
-                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="trailing" secondItem="jbw-bU-TpX" secondAttribute="trailing" id="cGA-dc-Qdw"/>
-                            <constraint firstItem="jbw-bU-TpX" firstAttribute="top" secondItem="JTI-Pb-FYk" secondAttribute="bottom" constant="8" id="goM-j7-8qb"/>
-                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="trailing" secondItem="m8M-6a-6C1" secondAttribute="trailingMargin" id="lrc-uF-1jA"/>
-                            <constraint firstItem="A5u-WA-hNR" firstAttribute="bottom" secondItem="jbw-bU-TpX" secondAttribute="bottom" constant="22" id="mgt-jT-eo7"/>
-                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="leading" secondItem="A5u-WA-hNR" secondAttribute="leading" constant="22" id="qAN-Ke-LJN"/>
+                            <constraint firstItem="A5u-WA-hNR" firstAttribute="trailing" secondItem="3Yk-zo-T4C" secondAttribute="trailing" constant="5" id="4jN-w3-Dou"/>
+                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="top" secondItem="3Yk-zo-T4C" secondAttribute="bottom" id="4mh-el-PS6"/>
+                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="leading" secondItem="A5u-WA-hNR" secondAttribute="leading" constant="22" id="6Io-9i-E66"/>
+                            <constraint firstItem="3Yk-zo-T4C" firstAttribute="top" secondItem="A5u-WA-hNR" secondAttribute="top" constant="11" id="EjB-MZ-Ero"/>
+                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="trailing" secondItem="m8M-6a-6C1" secondAttribute="trailingMargin" id="Wab-hQ-2fv"/>
+                            <constraint firstItem="3Yk-zo-T4C" firstAttribute="leading" secondItem="m8M-6a-6C1" secondAttribute="leadingMargin" constant="-27" id="ewG-q8-iIJ"/>
+                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="leading" secondItem="jbw-bU-TpX" secondAttribute="leading" id="huU-8e-Rcd"/>
+                            <constraint firstItem="JTI-Pb-FYk" firstAttribute="trailing" secondItem="jbw-bU-TpX" secondAttribute="trailing" id="jwB-BM-K0G"/>
+                            <constraint firstItem="jbw-bU-TpX" firstAttribute="top" secondItem="JTI-Pb-FYk" secondAttribute="bottom" constant="8" id="k3o-h0-wPU"/>
+                            <constraint firstItem="A5u-WA-hNR" firstAttribute="bottom" secondItem="jbw-bU-TpX" secondAttribute="bottom" constant="22" id="ug4-2h-3Pc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Both" image="doc.text.image.fill" catalog="system" id="ivq-S0-ZBr">
@@ -78,12 +80,11 @@
             <objects>
                 <viewController storyboardIdentifier="firstFinal" title="firstFinal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RTg-Re-rp5" customClass="firstFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EEh-lf-vnJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="849"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="430-JS-MIO">
-                                <rect key="frame" x="0.0" y="51" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="430-JS-MIO">
+                                <rect key="frame" x="0.0" y="62" width="430" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
@@ -104,32 +105,32 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="17b-MP-9Ku">
-                                <rect key="frame" x="0.0" y="135" width="414" height="408"/>
+                                <rect key="frame" x="0.0" y="135" width="430" height="408"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="408" id="MkN-pp-PoW"/>
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="xkB-d7-p4e">
-                                <rect key="frame" x="58" y="657" width="298" height="31"/>
+                                <rect key="frame" x="58" y="693" width="314" height="31"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="brightnessSlider:" destination="RTg-Re-rp5" eventType="valueChanged" id="arC-lQ-wF5"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contrast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-H3-Z6j">
-                                <rect key="frame" x="173" y="770" width="68" height="23"/>
+                                <rect key="frame" x="181" y="806" width="68" height="23"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-BoldItalic" family="Segoe UI" pointSize="17"/>
                                 <color key="textColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaP-sR-kEm">
-                                <rect key="frame" x="165" y="697" width="84" height="23"/>
+                                <rect key="frame" x="173" y="733" width="84" height="23"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-BoldItalic" family="Segoe UI" pointSize="17"/>
                                 <color key="textColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SaT-ie-yVg">
-                                <rect key="frame" x="58" y="730" width="298" height="31"/>
+                                <rect key="frame" x="58" y="766" width="314" height="31"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="contrastSlider:" destination="RTg-Re-rp5" eventType="valueChanged" id="0I4-hL-aHa"/>
@@ -139,8 +140,10 @@
                         <viewLayoutGuide key="safeArea" id="XFp-vW-H2h"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="430-JS-MIO" firstAttribute="top" secondItem="XFp-vW-H2h" secondAttribute="top" constant="3" id="5CP-QN-132"/>
                             <constraint firstItem="xkB-d7-p4e" firstAttribute="leading" secondItem="XFp-vW-H2h" secondAttribute="leading" constant="60" id="9yh-5V-Rgn"/>
                             <constraint firstItem="jaP-sR-kEm" firstAttribute="top" secondItem="xkB-d7-p4e" secondAttribute="bottom" constant="10" id="Bhb-c3-tuR"/>
+                            <constraint firstItem="430-JS-MIO" firstAttribute="leading" secondItem="17b-MP-9Ku" secondAttribute="leading" id="ELo-cF-sZX"/>
                             <constraint firstItem="xkB-d7-p4e" firstAttribute="centerX" secondItem="5ZD-H3-Z6j" secondAttribute="centerX" id="Flf-ZT-GCC"/>
                             <constraint firstItem="SaT-ie-yVg" firstAttribute="top" secondItem="jaP-sR-kEm" secondAttribute="bottom" constant="10" id="GcU-y7-8pQ"/>
                             <constraint firstItem="XFp-vW-H2h" firstAttribute="bottom" secondItem="5ZD-H3-Z6j" secondAttribute="bottom" constant="20" id="MLa-95-IvZ"/>
@@ -150,6 +153,7 @@
                             <constraint firstItem="17b-MP-9Ku" firstAttribute="top" secondItem="EEh-lf-vnJ" secondAttribute="top" constant="135" id="kYo-lc-nTo"/>
                             <constraint firstItem="5ZD-H3-Z6j" firstAttribute="top" secondItem="SaT-ie-yVg" secondAttribute="bottom" constant="10" id="kgj-XC-IBJ"/>
                             <constraint firstItem="17b-MP-9Ku" firstAttribute="leading" secondItem="XFp-vW-H2h" secondAttribute="leading" id="t84-xV-dMO"/>
+                            <constraint firstItem="430-JS-MIO" firstAttribute="trailing" secondItem="17b-MP-9Ku" secondAttribute="trailing" id="uhJ-Q9-KSi"/>
                             <constraint firstItem="SaT-ie-yVg" firstAttribute="leading" secondItem="xkB-d7-p4e" secondAttribute="leading" id="vV7-Iy-dVI"/>
                             <constraint firstItem="xkB-d7-p4e" firstAttribute="centerX" secondItem="jaP-sR-kEm" secondAttribute="centerX" id="vkC-Sr-hYc"/>
                         </constraints>
@@ -172,11 +176,11 @@
             <objects>
                 <viewController storyboardIdentifier="secondFinal" title="secondFinal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="emu-IO-Jih" customClass="secondFinal" customModule="TakingPictures" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v6J-cH-3K6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="849"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDu-cJ-Y7O">
-                                <rect key="frame" x="2" y="71" width="410" height="44"/>
+                                <rect key="frame" x="2" y="71" width="426" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textAttributes key="titleTextAttributes">
@@ -197,33 +201,33 @@
                                 </items>
                             </navigationBar>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UrI-P7-A4j">
-                                <rect key="frame" x="2" y="162" width="414" height="373"/>
+                                <rect key="frame" x="2" y="162" width="430" height="373"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="373" id="cVP-WF-wiA"/>
                                 </constraints>
                             </imageView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EHu-a3-XQ7">
-                                <rect key="frame" x="67" y="663" width="298" height="31"/>
+                                <rect key="frame" x="67" y="699" width="314" height="31"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="brightnessSlider:" destination="emu-IO-Jih" eventType="valueChanged" id="DEK-Ch-gMu"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="omS-Be-fxd">
-                                <rect key="frame" x="67" y="733" width="298" height="31"/>
+                                <rect key="frame" x="67" y="769" width="314" height="31"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <connections>
                                     <action selector="contrastSlider:" destination="emu-IO-Jih" eventType="valueChanged" id="Fmr-di-kUd"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contrast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-Yu-Zzq">
-                                <rect key="frame" x="183" y="773" width="66" height="20"/>
+                                <rect key="frame" x="191.33333333333334" y="809" width="65.666666666666657" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-BoldItalic" family="Segoe UI" pointSize="17"/>
                                 <color key="textColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brightness" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6B-tZ-3fu">
-                                <rect key="frame" x="175.5" y="703" width="81" height="20"/>
+                                <rect key="frame" x="183.33333333333334" y="739" width="81.333333333333343" height="20"/>
                                 <fontDescription key="fontDescription" name="SegoeUI-BoldItalic" family="Segoe UI" pointSize="17"/>
                                 <color key="textColor" red="0.32156862749999998" green="0.12549019610000001" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
