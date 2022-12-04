@@ -8,19 +8,36 @@
 import UIKit
 
 class secondFinal: UIViewController {
-    
     var image: UIImage? = nil
+    var aCIImage = CIImage();
+    var contrastFilter: CIFilter!;
+    var brightnessFilter: CIFilter!;
+    var context = CIContext();
+    var outputImage = CIImage();
+    var newUIImage = UIImage();
 
-    @IBAction func pressSaveSecond(_ sender: UIBarButtonItem) {
-        UIImageWriteToSavedPhotosAlbum(secondImage.image!, nil, nil, nil)
-        var dialogMessage = UIAlertController(title: "Saved", message: "Second Image Saved", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
-             print("Ok button tapped")
-          })
-         dialogMessage.addAction(ok)
-        self.present(dialogMessage, animated: true, completion: nil)
+    //brightness slider for the first image tab
+    @IBAction func brightnessSlider(_ sender: UISlider) {
+        brightnessFilter.setValue(NSNumber(value: sender.value), forKey: "inputBrightness");
+        outputImage = brightnessFilter.outputImage!;
+        let imageRef = context.createCGImage(outputImage, from: outputImage.extent)
+        newUIImage = UIImage(cgImage: imageRef!)
+        secondImage.image = newUIImage;
     }
+    
+    
+    //contrast slider for the first image tab
+    @IBAction func contrastSlider(_ sender: UISlider) {
+        contrastFilter.setValue(NSNumber(value: sender.value), forKey: "inputContrast")
+        outputImage = contrastFilter.outputImage!;
+        let cgimg = context.createCGImage(outputImage, from: outputImage.extent)
+        newUIImage = UIImage(cgImage: cgimg!)
+        secondImage.image = newUIImage;
+    }
+    
 
+    
+    //if the share button is pressd on the top right
     @IBAction func pressShareSecond(_ sender: UIBarButtonItem) {
         let imageToShare = [ image! ]
         let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
@@ -34,7 +51,16 @@ class secondFinal: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(false, animated: false)
         secondImage.image = image
+        
+        //initial brightness and contrast
+        let aUIImage = secondImage.image;
+        let aCGImage = aUIImage?.cgImage;
+        aCIImage = CIImage(cgImage: aCGImage!)
+        context = CIContext(options: nil);
+        contrastFilter = CIFilter(name: "CIColorControls");
+        contrastFilter.setValue(aCIImage, forKey: "inputImage")
+        brightnessFilter = CIFilter(name: "CIColorControls");
+        brightnessFilter.setValue(aCIImage, forKey: "inputImage")
     }
 }

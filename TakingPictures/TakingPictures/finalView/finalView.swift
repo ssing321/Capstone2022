@@ -11,7 +11,7 @@ class finalView: UITabBarController {
     var image: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
+//        self.navigationItem.setHidesBackButton(true, animated: false)
     }
 }
- 
+
