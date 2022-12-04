@@ -11,29 +11,34 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var button: UIButton!
-    @IBOutlet var Lbutton: UIButton!
-    @IBOutlet var Cbutton: UIButton!
-    @IBOutlet var Ibutton: UIButton!
+    @IBOutlet var Lbutton: UIButton!//live button
+    @IBOutlet var Cbutton: UIButton!//capture button
+    @IBOutlet var Ibutton: UIButton!//import button
     
-    var firstImageStore: UIImage!
+    var checkUploadOrClicker: Int! //using checkUploadOrClicker to check if image has been clicked or uploaded and then use                             it add constraints
+    
+    var firstImageStore: UIImage! //for storing and seguing the first image
     
     override func viewDidLoad() {
+        //when the first view loads
         super.viewDidLoad()
         Lbutton.layer.cornerRadius = 20.0
         Cbutton.layer.cornerRadius = 20.0
         Ibutton.layer.cornerRadius = 20.0
-        Lbutton.alpha = 0
+        Lbutton.alpha = 0 //hiding the live button till the user has uploaded or captured the first image
     }
     
-    
+    //for clicking the first image using the UIImagePickerController
     @IBAction func didTapCameraButton() {
         let picker = UIImagePickerController()
         picker.sourceType = .camera
         picker.delegate = self
+        picker.allowsEditing = true
         present(picker, animated: true)
-        Lbutton.alpha = 1
+        Lbutton.alpha = 1 //showing the live button now
+        checkUploadOrClicker = 1
     }
+    //for uploading the first image using the UIImagePickerController
     @IBAction func didTapImportButton() {
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
@@ -41,18 +46,19 @@ class ViewController: UIViewController {
         vc.allowsEditing = true
         present(vc, animated: true)
         Lbutton.alpha = 1
+        checkUploadOrClicker = 0
     }
-    
+    //when live button is clicked go to upload view
     @IBAction func didTapPostButton() {
         self.firstImageStore = imageView.image
         performSegue(withIdentifier: "upload", sender: self)
     }
-    
+    // go to upload view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! uploadView
         vc.firstImageInSecondView = self.firstImageStore
     }
-    
+    // some contraints to fix first image orientation
     func fixOrientation(img: UIImage) -> UIImage {
         if (img.imageOrientation == .up) {
             return img
@@ -81,11 +87,13 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             else {
             return
         }
-//        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         imageView.image = image
-        imageView.image = fixOrientation(img: imageView.image!)
+//        imageView.image = fixOrientation(img: imageView.image!)
+        
+        //if the image is uploaded
+        if(checkUploadOrClicker == 0){
+            imageView.contentMode = .scaleAspectFit
+            imageView.clipsToBounds = true
+        }
     }
 }
-
-
-
